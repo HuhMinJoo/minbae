@@ -33,17 +33,6 @@ public class UserController {
         return "user/user_index";
     }
 
-    @GetMapping("/category/click/{categoryKo}/{categoryEn}")
-    public ModelAndView categoryClick(@PathVariable String categoryKo, @PathVariable String categoryEn){
-
-        ModelAndView mav = new ModelAndView();
-
-        mav.addObject("categoryKo", categoryKo);
-        mav.addObject("categoryEn", categoryEn);
-        mav.setViewName("user/category_click");
-        return mav;
-    }
-
     //주문 많은 순, 별점 많은 순
     @GetMapping("/store/{categoryKo}/{categoryEn}/{type}")
     public ModelAndView getStoreByCategory(@PathVariable("categoryKo") String categoryKo,
@@ -161,9 +150,6 @@ public class UserController {
     public ModelAndView orderHistory(@PathVariable("user_idx") Long user_idx){
 
         ModelAndView mav = new ModelAndView();
-//        List<Map<String, Object>> orderHistoryList = userService.orderHistory(user_idx);
-//
-//            mav.addObject("orderHistoryList", orderHistoryList);
         mav.setViewName("user/uesr_order_history");
 
         return mav;

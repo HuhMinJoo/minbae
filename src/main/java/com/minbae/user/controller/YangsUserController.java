@@ -11,26 +11,26 @@ public class YangsUserController {
 
     @GetMapping("/user/main/addr/main")
     public String mainPageAddrPage(){
-        return "user/addr/main_page_addr_change_view_page";
+        return "addr/main_page_addr_change_view_page";
     }
     @GetMapping("/user/main/addr/edit")
     public String mainPageAddrEditPage(){
-        return "user/addr/main_page_addr_change_view_page_edit";
+        return "addr/main_page_addr_change_view_page_edit";
     }
     @GetMapping("/user/main/addr/map")
     public String mainPageAddrMapPage(String addr,Model model){
         if(addr!=null)model.addAttribute("basicAddr",addr);
-        return "user/addr/main_page_addr_change_view_page_map";
+        return "addr/main_page_addr_change_view_page_map";
     }
     @GetMapping("/user/main/addr/search")
     public String mainPageSearchPage(){
-        return "user/addr/main_page_addr_change_view_page_search";
+        return "addr/main_page_addr_change_view_page_search";
     }
     @GetMapping("/user/main/addr/search/result")
     public ModelAndView mainPageSearchResultPage(String basic, String road, ModelAndView model){
         model.addObject("basic",basic);
         model.addObject("road",road);
-        model.setViewName("user/addr/main_page_addr_change_view_page_search_result");
+        model.setViewName("addr/main_page_addr_change_view_page_search_result");
         return model;
     }
 
