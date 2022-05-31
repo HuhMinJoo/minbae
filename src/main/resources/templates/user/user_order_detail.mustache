@@ -44,21 +44,6 @@
                     }else if(data.order_state == 5){
                         order_state = '픽업 완료';
                     }
-
-                    // let order_store_text = `<div class="card mb-3" style="max-width: 750px;">
-                    //                           <div class="row g-0">
-                    //                             <div class="col-md-8">
-                    //                               <div class="card-body">
-                    //                                 <h5 class="card-title">${data.store_name}</h5>
-                    //                                 <p class="card-text"><small class="text-muted">*주문 일시 : </small><span style="font-size: small">${order_date.toLocaleDateString()}</span></p>
-                    //                                 <p class="card-text" style="color: cornflowerblue" id="order_state_color${idx}">${order_state}</p>
-                    //                                 <div>
-                    //                                     <button type="button" class="btn btn-outline-primary" onclick="reviewCreate(${data.store_idx}, ${data.trade_history_idx})" style="display: none" id="reviewCreate${idx}">리뷰 작성하기</button>
-                    //                                 </div>
-                    //                               </div>
-                    //                             </div>
-                    //                          </div>
-                    //                       </div>`
                     let order_store_text = `<div class="card mb-3" style="max-width: 750px;">
                                       <div class="row g-0">
                                         <div class="col-md-4">

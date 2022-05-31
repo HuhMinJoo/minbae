@@ -44,9 +44,6 @@
             <input type="text" readonly class="form-control-plaintext" id="user_addr_detail" value="{{user_info.user_detail_addr}}">
         </div>
     </div>
-
-<!--    <div><label>우리집</label>:<label id="user_addr">{{user_info.user_basic_addr}}</label></div>-->
-<!--    <div><label>상세주소</label><input type="text" id="user_addr_detail" value="{{user_info.user_detail_addr}}"></div>-->
 </div>
 
 {{#user_info.user_tel}}
@@ -78,8 +75,6 @@
         <input type="text" readonly class="form-control-plaintext" id="quantity_print">
     </div>
 </div>
-<!--<div><label>메뉴</label>:<label id="menu_print"></label></div>-->
-<!--<div><label>총 수량</label>:<label id="quantity_print"></label></div>-->
 <hr>
 <div>
     <h4 style="color: cadetblue">결제 수단</h4>
@@ -103,12 +98,6 @@
             <input type="text" readonly class="form-control-plaintext" id="deliverPrice">
         </div>
     </div>
-<!--    <div>-->
-<!--        <label> 주문 금액 </label>:<lable id="totalPrice"></lable>-->
-<!--    </div>-->
-<!--    <div id="deliver_price">-->
-<!--        <label> 배달팁 </label>:<label id="deliverPrice"></label>-->
-<!--    </div>-->
     <hr>
 </div>
 <div class="mb-3 row" style="float: none;">
@@ -117,9 +106,6 @@
         <input type="text" readonly class="form-control-plaintext" id="realTotalPrice">
     </div>
 </div>
-<!--<div>-->
-<!--    <label> 총 결제금액 </label>:<label id="realTotalPrice"></label>-->
-<!--</div>-->
 <div style="text-align: center">
     <button type="button" class="btn btn-primary btn-sm" onclick="location.href='/user/shopping/list'">돌아가기</button>
     <button type="button" class="btn btn-primary btn-sm" onclick="requestPay()" id="b_order">결제하기</button>
