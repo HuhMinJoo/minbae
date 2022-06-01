@@ -15,7 +15,7 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true); //내 서버가 응답할때 제이슨을 자바스크립트에서 처리 할 수 있게
-        config.addAllowedOrigin("*");
+        config.addAllowedOriginPattern("*");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**",config);

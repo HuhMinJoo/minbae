@@ -26,3 +26,8 @@ mybatis:
   type-aliases-package: com.minbae.user.domain
 server:
   port: '9090'
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: 2325
+    key-store-type: PKCS12
