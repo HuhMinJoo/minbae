@@ -30,7 +30,7 @@ public class UserController {
 
     @GetMapping("/main")
     public String user_index(){
-        return "user/user_index";
+        return "index";
     }
 
     //주문 많은 순, 별점 많은 순
@@ -46,6 +46,8 @@ public class UserController {
 
         ModelAndView mav = new ModelAndView();
         List<Map<String, Object>> store_list = userService.getStoreByCategoryOrderAndStar(categoryEn, type);
+
+        System.out.println("store_list -------------------> " + store_list);
 
         mav.addObject("store_list", store_list);
         mav.addObject("categoryKo", categoryKo);

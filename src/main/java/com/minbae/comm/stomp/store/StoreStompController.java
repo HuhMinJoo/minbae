@@ -18,7 +18,6 @@ public class StoreStompController {
     // 주문자 -> 가게
     @MessageMapping("/store/{storeIdx}")
     public void greeting(UserToStoreMessage message, @DestinationVariable("storeIdx") String storeIdx) throws Exception {
-        //Thread.sleep(100); // simulated delay
         simpMessagingTemplate.convertAndSend("/topic/store/"+storeIdx, message);
     }
 

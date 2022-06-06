@@ -12,7 +12,7 @@ window.onscroll = function (e) {
 }
 
 function requestStandardStoreList() {
-    if (location.href.startsWith("http://52.78.65.121:9090/user/category/click/")) {
+    if (location.href.startsWith("http://huhming.ga/user/category/click/")) {
         $.ajax({
             type: 'GET',
             url: '/user/category/standard?paging=' + page + '&user_lat=' + user_lat + '&user_lng=' + user_lng + '&category=' + (window.location.href.split('/', 7)[6]),

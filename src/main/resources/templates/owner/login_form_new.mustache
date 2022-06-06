@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <!--카카오 소셜 로그인-->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<!--    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>-->
     <style>
         body{
             background-color: #2AC1BC;
@@ -46,7 +46,7 @@
             <p class="mt-5 mb-3 text-muted">&copy; 2022 minbae final project</p>
         </form>
         <!--카카오 로그인-->
-        <a id="kakao-login-btn">
+<!--        <a id="kakao-login-btn">-->
 
         </a>
     </div>
@@ -134,64 +134,64 @@
     };
     main.init();
 </script>
-<!--소셜로그인-->
-<script>
-    // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
-    Kakao.init('712d34fc361b41cea1262050b5b4ea79');
-    // SDK 초기화 여부를 판단합니다.
-    console.log(Kakao.isInitialized());
+<!--&lt;!&ndash;소셜로그인&ndash;&gt;-->
+<!--<script>-->
+<!--    // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.-->
+<!--    Kakao.init('fd415bfe990421083c1a4135da20924a');-->
+<!--    // SDK 초기화 여부를 판단합니다.-->
+<!--    console.log(Kakao.isInitialized());-->
 
-    Kakao.Auth.createLoginButton({
-        container: '#kakao-login-btn',
-        success: function(authObj) {
-            Kakao.API.request({
-                url: '/v2/user/me',
-                success: function(result) {
-                    const kakaoId = result?.id;
-                    const kakaoEmail = result?.kakao_account?.email;
-                    const kakaoNickName = result?.properties?.nickname;
-                    const kakaoPwd = kakaoId;
+<!--    Kakao.Auth.createLoginButton({-->
+<!--        container: '#kakao-login-btn',-->
+<!--        success: function(authObj) {-->
+<!--            Kakao.API.request({-->
+<!--                url: '/v2/user/me',-->
+<!--                success: function(result) {-->
+<!--                    const kakaoId = result?.id;-->
+<!--                    const kakaoEmail = result?.kakao_account?.email;-->
+<!--                    const kakaoNickName = result?.properties?.nickname;-->
+<!--                    const kakaoPwd = kakaoId;-->
 
-                    const data = {
-                        'email' : kakaoEmail,
-                        'nickName' : kakaoNickName,
-                        'pwd' : kakaoPwd
-                    }
+<!--                    const data = {-->
+<!--                        'email' : kakaoEmail,-->
+<!--                        'nickName' : kakaoNickName,-->
+<!--                        'pwd' : kakaoPwd-->
+<!--                    }-->
 
-                    //fetch('http://localhost:9090/owner/kakao/login', {
-                    fetch('http://52.78.65.121:9090/owner/kakao/login', {
-                        method: "POST",
-                        body: JSON.stringify(data),
-                        headers: {
-                            "Content-Type" : "application/json"
-                        }
-                    }).then(response => response.json())
-                            .then(data => {
-                                //console.log(JSON.stringify(data.memberData));
-                                //console.log(data.data);
-                                window.sessionStorage.setItem("token", data.data);
-                                window.sessionStorage.setItem("memberData", JSON.stringify(data.memberData));
-                                $.ajax({
-                                    type: "GET",
-                                    url: "/owner/store/main",
-                                    headers: {'user-token': window.sessionStorage.getItem("token")}
-                                }).done(function () {
-                                    location.href = "/owner/store/main";
-                                });
-                                alert('로그인 성공!');
-                            });
-                },
-                fail: function(error) {
-                    alert(
-                            'login success, but failed to request user information: ' +
-                            JSON.stringify(error)
-                    )
-                },
-            })
-        },
-        fail: function(err) {
-            alert('failed to login: ' + JSON.stringify(err))
-        },
-    })
-</script>
+<!--                    //fetch('http://localhost:9090/owner/kakao/login', {-->
+<!--                    fetch('https://huhming.ga/owner/kakao/login', {-->
+<!--                        method: "POST",-->
+<!--                        body: JSON.stringify(data),-->
+<!--                        headers: {-->
+<!--                            "Content-Type" : "application/json"-->
+<!--                        }-->
+<!--                    }).then(response => response.json())-->
+<!--                            .then(data => {-->
+<!--                                //console.log(JSON.stringify(data.memberData));-->
+<!--                                //console.log(data.data);-->
+<!--                                window.sessionStorage.setItem("token", data.data);-->
+<!--                                window.sessionStorage.setItem("memberData", JSON.stringify(data.memberData));-->
+<!--                                $.ajax({-->
+<!--                                    type: "GET",-->
+<!--                                    url: "/owner/store/main",-->
+<!--                                    headers: {'user-token': window.sessionStorage.getItem("token")}-->
+<!--                                }).done(function () {-->
+<!--                                    location.href = "/owner/store/main";-->
+<!--                                });-->
+<!--                                alert('로그인 성공!');-->
+<!--                            });-->
+<!--                },-->
+<!--                fail: function(error) {-->
+<!--                    alert(-->
+<!--                            'login success, but failed to request user information: ' +-->
+<!--                            JSON.stringify(error)-->
+<!--                    )-->
+<!--                },-->
+<!--            })-->
+<!--        },-->
+<!--        fail: function(err) {-->
+<!--            alert('failed to login: ' + JSON.stringify(err))-->
+<!--        },-->
+<!--    })-->
+<!--</script>-->
 </html>

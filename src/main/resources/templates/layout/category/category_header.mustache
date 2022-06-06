@@ -7,22 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<script>
-    let user_latlng = JSON.parse(window.localStorage.getItem("user_latlng"));
-    console.log(user_latlng.user_lat)
-    let lat = user_latlng.user_lat;
-    let lng = user_latlng.user_lng;
 
-
-    fetch(`/user/${lat}/${lng}`)
-        .then(response => response)
-            .then(data => {
-            });
-</script>
 <body>
 <div>
-    <span><a href="/user/main" style="text-decoration-line: none"><-</a></span>
-    <div style="text-align: center; font-size: 25px"">{{categoryKo}}</div>
+    <span><a href="/" style="text-decoration-line: none"><-</a></span>
+    <div style="text-align: center; font-size: 25px">{{categoryKo}}</div>
 <!--    <span style="margin-left: 18rem; font-size: 25px">{{categoryKo}}</span>-->
 </div>
 

@@ -32,9 +32,7 @@ public class OAuthService {    // 0514 kakao하면서 추가
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
-            sb.append("&client_id=90795a88763d2cd0be72934b69a89f7d"); // TODO REST_API_KEY 입력
-            //sb.append("&redirect_uri=http://localhost:9090/oauth/kakao/owner"); // TODO 인가코드 받은 redirect_uri 입력
-            sb.append("&redirect_uri=http://52.78.65.121:9090/oauth/kakao/owner"); // TODO 인가코드 받은 redirect_uri 입력
+            sb.append("&client_id=ae45e75efa232f8f6afa769273b9b46c"); // TODO REST_API_KEY 입력
             sb.append("&code=" + code);
             bw.write(sb.toString());
             bw.flush();

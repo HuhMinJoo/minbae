@@ -284,9 +284,8 @@
             .then((response) => response.json())
             .then((data) => {
                 if(data.status == 'SUCCESS'){
-                    // console.log("data.data -> " + data.data)
                     // //소켓 연결
-                    let socket = new SockJS('/chat');
+                    let socket = new SockJS('/wss/chat');
                     let stompClient = Stomp.over(socket);
                     stompClient.connect({}, function (frame) {
                         //응답 보내기
@@ -298,12 +297,12 @@
                         );
                     });
 
-                    sessionStorage.removeItem('item');
-                    sessionStorage.removeItem('deliver_or_take_out');
-                    alert('주문이 완료되었습니다.');
-                    setTimeout(function() {
-                        location.href = `/user/order/detail`;
-                    }, 1500);
+                    // sessionStorage.removeItem('item');
+                    // sessionStorage.removeItem('deliver_or_take_out');
+                    // alert('주문이 완료되었습니다.');
+                    // setTimeout(function() {
+                    //     location.href = `/user/order/detail`;
+                    // }, 1000);
                 }
             });
         }

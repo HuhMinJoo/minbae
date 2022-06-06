@@ -4,9 +4,8 @@
 <script>
     let get_login = JSON.parse(sessionStorage.getItem("memberData"));
     let user_idx = get_login?.memberData?.userIdx;
-
     //소켓 연결
-    let socket = new SockJS('/chat');
+    let socket = new SockJS('https://huhming.ga/chat');
     let stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);

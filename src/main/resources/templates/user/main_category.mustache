@@ -1,3 +1,16 @@
+<script>
+    let user_latlng = JSON.parse(window.localStorage.getItem("user_latlng"));
+    console.log(user_latlng.user_lat)
+    let lat = user_latlng.user_lat;
+    let lng = user_latlng.user_lng;
+
+
+    fetch(`/user/${lat}/${lng}`)
+            .then(response => response)
+            .then(data => {
+            });
+</script>
+
 <div style="text-align: center">
     <div>
         <a href="/user/store/돈가스|회|일식/JAPANESEFOOD/star"><span><img src="/staticImg/JAPANESEFOOD.png" style="width: 100px; height: 100px"></span></a>

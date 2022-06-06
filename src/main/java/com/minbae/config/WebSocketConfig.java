@@ -16,6 +16,9 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/chat","/deliver").withSockJS();
+        registry.addEndpoint("/chat","/deliver")
+//                .setAllowedOrigins("https://huhming.ga:9090")
+                .withSockJS()
+                .setClientLibraryUrl("https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js");
     }
 }
